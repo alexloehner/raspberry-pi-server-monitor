@@ -12,6 +12,8 @@ There is really great and cool server monitoring software out there.
 But I needed something small, compact but nevertheless with ALL important information on one single view without scrolling.
 So I wrote this for a raspberry pi and its 7 inch touch display.
 
+All numbers in the monitor screens are dynamically updated every few seconds with Ajax. They also have a warn and error value from when they then become orange or red.
+
 Screenshots
 -----------
 
