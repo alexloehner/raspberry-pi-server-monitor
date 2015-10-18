@@ -1,2 +1,6 @@
-raspberry/www/_config.php
-
+config.php
+/config.php
+raspberry/config.php
+/raspberry/config.php
+raspberry/www/config.php
+/raspberry/www/config.php
