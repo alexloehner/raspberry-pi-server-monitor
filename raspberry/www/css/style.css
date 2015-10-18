@@ -1,0 +1,199 @@
+body {
+	font-size: 16px;
+	font-weight: bolder;
+	margin: 0;
+	padding: 0;
+}
+
+.ui-page {
+}
+
+
+.center {
+	text-align: center;
+	vertical-align: middle;
+}
+
+.menu-item {
+	font-size: 1.2em;
+	font-weight: bolder;
+	min-height: 200px;
+	padding: 0;
+}
+
+.menu-item > a > button, .menu-item > button {
+	font-size: 1.2em;
+	font-weight: bolder;
+	min-height: 200px !important;
+	padding: 0 !important;
+	margin: 0 !important;
+	margin-top: 5px !important;
+	width: 99%;
+}
+
+ul > li > div {
+	line-height: 30px !important;
+	height: 30px !important;
+}
+
+#footer, .footer {
+	width: 100%;
+	position: fixed;
+	bottom: -50px;
+	text-align: right;
+}
+
+@media (min-width:768px) {
+	.navbar-toggle {
+	    display: block;
+	}
+}
+
+#nav {
+    bottom: 0px !important;
+    position: fixed !important;
+    right: 0px;
+    color: #000;
+}
+
+#nav button {
+	width: 43px;
+	height: 35px;
+}
+
+.navbar-toggle .icon-bar {
+	background-color: #333333;
+}
+
+#footer button {
+	width: 160px;
+}
+
+.ok {
+	background-color: #ffffff;
+	color: #04B404;
+	padding: 3px;
+	border: 1px solid #ffffff;
+}
+
+.error {
+	background-color: #ff0000;
+	color: #ffffff;
+	font-weight: bolder;
+	padding: 3px;
+	border: 1px solid #ffffff;
+}
+
+.warn {
+	background-color: #ffffff;
+	color: #B45F04;
+	font-weight: bolder;
+	padding: 3px;
+	border: 1px solid #ffffff;
+}
+
+.netstat {
+  width:100%;
+  border:0;
+}
+
+.sameday {
+  margin: 3px;
+  width: 100%;
+  float: left;
+}
+
+.entry {
+  float: left;
+  width: 100%;
+  padding: 3px;
+}
+
+.date {
+  width: 30%;
+  float: left;
+  padding: 3px;
+}
+
+.events {
+  width: 70%;
+  float: left;
+}
+
+.event {
+  padding: 3px;
+}
+
+legend {
+    display: block;
+    width: 100%;
+    padding: 0;
+    margin-bottom: 0;
+    font-size: 21px;
+    line-height: inherit;
+    color: #333;
+    border: 0;
+    border-bottom: 1px solid #e5e5e5;
+    background-color: #e5e5e5;
+}
+
+.oneliner {
+    height: 37px;
+}
+
+.twoliner {
+    height: 66px;
+}
+
+.list-group-item {
+    padding: 5px 5px !important;
+}
+
+.h1, .h2, .h3, h1, h2, h3 {
+    margin-top: 5px;
+    margin-bottom: 7px;
+    text-align: center;
+}
+
+#copyright {
+    position: fixed;
+    bottom: 0px;
+    font-size: 0.8em;
+    color: #999;
+    text-align: right;
+    width: 100%;
+    padding-right: 100px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
