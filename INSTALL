@@ -1,12 +1,3 @@
-
-
-
-
-
-
-
-/usr/bin/ifstat -n -z -q -b -i em1 2 >/tmp/netstat.log 2>/dev/null &
-
-
+see README.md
 
 
