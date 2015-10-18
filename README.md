@@ -3,13 +3,13 @@ Raspberry Pi Server Monitoring
 
 (Single) Server Monitoring with the Raspberry Pi and a 7 inch touch screen
 
-## For the Installation instructions and dependencies, scroll down!
+#### For the Installation instructions and dependencies, scroll down!
 
 Screenshots:
 
-![alt tag](https://github.com/alexloehner/raspberry-pi-server-monitor/raw/master/screenshots/image-01.jpg)
+![The main menu](https://github.com/alexloehner/raspberry-pi-server-monitor/raw/master/screenshots/image-01.jpg)
 
-![alt tag](https://github.com/alexloehner/raspberry-pi-server-monitor/raw/master/screenshots/image-02.jpg)
+![The performance monitor](https://github.com/alexloehner/raspberry-pi-server-monitor/raw/master/screenshots/image-02.jpg)
 
 
 Requirements
