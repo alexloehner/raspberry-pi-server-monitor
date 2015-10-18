@@ -63,3 +63,31 @@ function get_procs() {
     });
 }
 
+function get_logs() {
+    var nocache = new Date().getTime();
+    $.ajax({
+        type: "GET",
+        url: "/ajax.php?nocache="+nocache+"&action=logs",
+        cache: false,
+        success: function(html2) {
+            $('#terminal2').html(html2);
+        }
+    }).done(function(){
+        setTimeout(function(){get_logs();}, 2000);
+    });
+}
+
+function get_drives() {
+    var nocache = new Date().getTime();
+    $.ajax({
+        type: "GET",
+        url: "/ajax.php?nocache="+nocache+"&action=drives",
+        cache: false,
+        success: function(html2) {
+            $('#terminal2').html(html2);
+        }
+    }).done(function(){
+        setTimeout(function(){get_drives();}, 2000);
+    });
+}
+

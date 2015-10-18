@@ -21,11 +21,19 @@ else if (true === isset($_GET) && true === isset($_GET['action']) && "procs" == 
 }
 
 else if (true === isset($_GET) && true === isset($_GET['action']) && "net" == trim($_GET['action'])) {
-	include 'main.net.php';
+    include 'main.net.php';
 }
 
 else if (true === isset($_GET) && true === isset($_GET['action']) && "raspi" == trim($_GET['action'])) {
-	include 'main.raspi.php';
+    include 'main.raspi.php';
+}
+
+else if (true === isset($_GET) && true === isset($_GET['action']) && "drives" == trim($_GET['action'])) {
+    include 'main.drives.php';
+}
+
+else if (true === isset($_GET) && true === isset($_GET['action']) && "logs" == trim($_GET['action'])) {
+    include 'main.logs.php';
 }
 
 else if (true === isset($_GET) && true === isset($_GET['action']) && "reboot" == trim($_GET['action'])) {

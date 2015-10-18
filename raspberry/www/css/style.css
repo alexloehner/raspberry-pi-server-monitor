@@ -14,21 +14,51 @@ body {
 	vertical-align: middle;
 }
 
+#topmenu {
+    width: 100%;
+    height: 44%;
+    position: fixed;
+    top: 30px;
+}
+
+#bottommenu {
+    width: 100%;
+    height: 44%;
+    position: fixed;
+    bottom: 20px;
+}
+
 .menu-item {
 	font-size: 1.2em;
 	font-weight: bolder;
-	min-height: 200px;
-	padding: 0;
+    height: 100%;
 }
 
 .menu-item > a > button, .menu-item > button {
-	font-size: 1.2em;
-	font-weight: bolder;
-	min-height: 200px !important;
-	padding: 0 !important;
-	margin: 0 !important;
-	margin-top: 5px !important;
-	width: 99%;
+    font-size: 1.2em;
+    font-weight: bolder;
+    height: 90%;
+    color: white !important;
+    text-shadow: 1px 2px 5px #212121 !important;
+    background: #cc7a7a !important; /* Old browsers */
+    background: -moz-linear-gradient(top,  #cc7a7a 0%, #cc0000 100%) !important; /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#cc7a7a), color-stop(100%,#cc0000)) !important; /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(top,  #cc7a7a 0%,#cc0000 100%) !important; /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(top,  #cc7a7a 0%,#cc0000 100%) !important; /* Opera 11.10+ */
+    background: -ms-linear-gradient(top,  #cc7a7a 0%,#cc0000 100%) !important; /* IE10+ */
+    background: linear-gradient(to bottom,  #cc7a7a 0%,#cc0000 100%) !important; /* W3C */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#cc7a7a', endColorstr='#cc0000',GradientType=0 ) !important; /* IE6-9 */
+}
+
+.menu-item > a > button:hover, .menu-item > button:hover {
+    background: #cc9999 !important; /* Old browsers */
+    background: -moz-linear-gradient(top,  #cc9999 0%, #cc4141 100%) !important; /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#cc9999), color-stop(100%,#cc4141)) !important; /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(top,  #cc9999 0%,#cc4141 100%) !important; /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(top,  #cc9999 0%,#cc4141 100%) !important; /* Opera 11.10+ */
+    background: -ms-linear-gradient(top,  #cc9999 0%,#cc4141 100%) !important; /* IE10+ */
+    background: linear-gradient(to bottom,  #cc9999 0%,#cc4141 100%) !important; /* W3C */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#cc9999', endColorstr='#cc4141',GradientType=0 ) !important; /* IE6-9 */
 }
 
 ul > li > div {

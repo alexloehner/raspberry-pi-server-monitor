@@ -175,7 +175,36 @@ if (true === isset($_GET) && true === isset($_GET['action']) && "procs" == trim(
 	$out = "";
 	foreach($output AS $key => $val) {
 		$out .= $val."\n";
-	}	
+	}
 	$out = '<pre>'.$out.'</pre>';
 	echo $out;
 }
+
+if (true === isset($_GET) && true === isset($_GET['action']) && "logs" == trim($_GET['action'])) {
+	$command = '/usr/bin/ssh -p 202 root@linuxcounter.net "top -b -n 1 | grep -A 21 USER" 2>/dev/null';
+	$output = array();
+	$response = exec($command, $output);
+	$out = "";
+	foreach($output AS $key => $val) {
+		$out .= $val."\n";
+	}
+	$out = '<pre>'.$out.'</pre>';
+	echo $out;
+}
+
+if (true === isset($_GET) && true === isset($_GET['action']) && "drives" == trim($_GET['action'])) {
+	$command = '/usr/bin/ssh -p 202 root@linuxcounter.net "df -h" 2>/dev/null';
+	$output = array();
+	$response = exec($command, $output);
+	$out = "";
+	foreach($output AS $key => $val) {
+		$out .= $val."\n";
+	}
+	$out = '<pre>'.$out.'</pre>';
+	echo $out;
+}
+
+
+
+
+
