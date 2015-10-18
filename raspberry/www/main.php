@@ -1,9 +1,15 @@
 <?php
+/**
+ * Created by PhpStorm.
+ * User: Alexander Löhner
+ * Date: 18.10.2015
+ * Time: 11:51
+ */
 
 $shownav = true;
 if (false === isset($_GET) || false === isset($_GET['action'])) {
 	include 'main.menu.php';
-	$shownav = false;
+	// $shownav = false;
 }
 
 else if (true === isset($_GET) && true === isset($_GET['action']) && "live" == trim($_GET['action'])) {

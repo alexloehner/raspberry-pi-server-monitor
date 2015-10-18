@@ -1,4 +1,11 @@
-<div>
+<?php
+/**
+ * Created by PhpStorm.
+ * User: Alexander Löhner
+ * Date: 18.10.2015
+ * Time: 11:51
+ */
+?><div>
 	<div class="col-xs-4 menu-item center">
 		<a href="/?action=live"><button type="button" class="btn btn-lg btn-default">Live Monitor</button></a>
 	</div>

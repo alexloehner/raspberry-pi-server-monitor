@@ -1,4 +1,11 @@
-<!DOCTYPE html>
+<?php
+/**
+ * Created by PhpStorm.
+ * User: Alexander Löhner
+ * Date: 18.10.2015
+ * Time: 11:51
+ */
+?><!DOCTYPE html>
 <html lang="en">
 <head>
 	<title> Raspberry Pi Server Monitor </title>

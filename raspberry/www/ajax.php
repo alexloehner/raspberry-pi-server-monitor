@@ -1,4 +1,10 @@
 <?php
+/**
+ * Created by PhpStorm.
+ * User: Alexander Löhner
+ * Date: 18.10.2015
+ * Time: 11:51
+ */
 
 if (true === isset($_GET) && true === isset($_GET['action']) && "reload" == trim($_GET['action'])) {
     shell_exec('DISPLAY=:0 sh /usr/share/nginx/www/reload-browser.sh &');
