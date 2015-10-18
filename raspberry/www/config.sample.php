@@ -6,7 +6,8 @@
  * Time: 11:51
  */
 
-
+$SSH_HOST       =       "root@your.server.com";
+$SSH_PORT       =       22;
 
 
 

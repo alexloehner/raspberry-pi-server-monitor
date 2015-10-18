@@ -21,13 +21,6 @@ cpus=($( mpstat -P ALL 1 1 | awk '/Average:/ && $2 ~ /[0-9]/ {printf "%d\n",$3}'
 net=$( tail -n 1 /tmp/netstat.log | xargs )
 sensors=$( sensors )
 updates=$( cat /var/lib/update-notifier/updates-available | xargs | cut -d " " -f 1 )
-if [[ "$updates" = "" ]]; then
-        updates=0
-fi
-out=""
-
-################################################################
-
 num_sleeps=$( echo "$mytop" | grep Sleep | wc -l )
 queries=$( echo "$myadmin" | xargs | cut -d " " -f 6 )
 qps=$( echo "$myadmin" | xargs | cut -d " " -f 22 )
@@ -47,12 +40,12 @@ swap_total=$( echo "$swap" | cut -d " " -f 2 )
 swap_used=$( echo "$swap" | cut -d " " -f 3 )
 disk_read=$( echo "$iotop" | cut -d "|" -f 1 | xargs | cut -d ":" -f 2 | xargs )
 disk_write=$( echo "$iotop" | cut -d "|" -f 2 | xargs | cut -d ":" -f 2 | xargs )
-
 systin=$( echo "${sensors}" | grep "SYSTIN" | xargs | cut -d " " -f 2 )
 cputin=$( echo "${sensors}" | grep "CPUTIN" | xargs | cut -d " " -f 2 )
 auxtin=$( echo "${sensors}" | grep "AUXTIN" | xargs | cut -d " " -f 2 )
-
-
+if [[ "$updates" = "" ]]; then
+        updates=0
+fi
 
 appsr1=""
 for i in $apps1; do
@@ -84,36 +77,7 @@ while true; do
         c=$(( $c + 1 ))
 done
 
-date=$( date +"%d.%m.%Y" )
-time=$( date +"%H:%M:%S" )
-out="${out}                   ~ ~ ~ LiCo - The Linux Counter Project - Server Monitor ~ ~ ~\n"
-out="${out}====================================================================================================\n"
-out="${out} Today:\t\t${date}\t${time}\n"
-out="${out}----------------------------------------------------------------------------------------------------\n"
-out="${out} Info:\t\t${distri}\t\t${kernel}\n"
-out="${out} \t\t${uptime}\t\tApt Updates: ${updates}\n"
-out="${out}----------------------------------------------------------------------------------------------------\n"
-out="${out} Perf.:\t\tLoad avg: $lavg1 $lavg5 $lavg15\tProcesses: ${procs} (${procs_running}/${procs_sleeping}/${procs_zombi})\n"
-out="${out}----------------------------------------------------------------------------------------------------\n"
-out="${out} Mem:\t\tRam total: $mem_total MB\tRam used: $mem_used MB\n"
-out="${out} \t\tSwap total: $swap_total MB\tSwap used:  $swap_used MB\n"
-out="${out}----------------------------------------------------------------------------------------------------\n"
-out="${out} HDD:\t\tCurrent read: $disk_read\tCurrent write: $disk_write\n"
-out="${out}----------------------------------------------------------------------------------------------------\n"
-out="${out} CPU:\t\t${usage}\n"
-out="${out}----------------------------------------------------------------------------------------------------\n"
-out="${out} MySQL:\t\tSleeps: $num_sleeps\tQueries: $queries\tqps: $qps\tSlowQueries: $slowqueries\n"
-out="${out}----------------------------------------------------------------------------------------------------\n"
-out="${out} Net:\t\tIncoming: ${rx} kbps\tOutgoing: ${tx} kbps\n"
-out="${out}----------------------------------------------------------------------------------------------------\n"
-out="${out} Status:\t${appsr}\n"
-out="${out}----------------------------------------------------------------------------------------------------\n"
-out="${out}${topapps}\n"
-out="${out}===================================================================================================="
-outlast="                                             (c) 2015 by Alexander Löhner, The Linux Counter Project"
-
 array="${distri};${kernel};${uptime};${updates};$lavg1;$lavg5;$lavg15;${procs};${procs_running};${procs_sleeping};${procs_zombi};$mem_total;$mem_used;$swap_total;$swap_used;$disk_read;$disk_write;${NUM_OF_CPU_CORES};${usage};$num_sleeps;$queries;$qps;$slowqueries;${rx};${tx};${appsr1};${appsr2};${systin};${cputin};${auxtin}"
-
 
 echo -n "$array"
 exit 0

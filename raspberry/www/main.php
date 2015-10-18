@@ -6,6 +6,8 @@
  * Time: 11:51
  */
 
+include 'config.php';
+
 $shownav = true;
 if (false === isset($_GET) || false === isset($_GET['action'])) {
 	include 'main.menu.php';

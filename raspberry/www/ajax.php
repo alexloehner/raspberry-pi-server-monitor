@@ -6,13 +6,14 @@
  * Time: 11:51
  */
 
+include 'config.php';
 if (true === isset($_GET) && true === isset($_GET['action']) && "reload" == trim($_GET['action'])) {
-    shell_exec('DISPLAY=:0 sh /usr/share/nginx/www/reload-browser.sh &');
+    shell_exec('DISPLAY=:0 sh reload-browser.sh &');
 }
 
 
 if (true === isset($_GET) && true === isset($_GET['action']) && "live" == trim($_GET['action'])) {
-	$command = '/usr/bin/ssh -p 202 root@linuxcounter.net /root/bin/monitoring.pi.sh 2>/dev/null';
+	$command = 'ssh -p '.$SSH_PORT.' '.$SSH_HOST.' monitoring.sh 2>/dev/null';
 	$response = exec($command);
 	$response = trim($response);
 	$resarray = explode(";", $response);
@@ -169,7 +170,7 @@ if (true === isset($_GET) && true === isset($_GET['action']) && "live" == trim($
 
 
 if (true === isset($_GET) && true === isset($_GET['action']) && "procs" == trim($_GET['action'])) {
-	$command = '/usr/bin/ssh -p 202 root@linuxcounter.net "top -b -n 1 | grep -A 21 USER" 2>/dev/null';
+	$command = 'ssh -p '.$SSH_PORT.' '.$SSH_HOST.' "top -b -n 1 | grep -A 21 USER" 2>/dev/null';
 	$output = array();
 	$response = exec($command, $output);
 	$out = "";
@@ -181,7 +182,7 @@ if (true === isset($_GET) && true === isset($_GET['action']) && "procs" == trim(
 }
 
 if (true === isset($_GET) && true === isset($_GET['action']) && "logs" == trim($_GET['action'])) {
-	$command = '/usr/bin/ssh -p 202 root@linuxcounter.net "top -b -n 1 | grep -A 21 USER" 2>/dev/null';
+	$command = 'ssh -p '.$SSH_PORT.' '.$SSH_HOST.' "top -b -n 1 | grep -A 21 USER" 2>/dev/null';
 	$output = array();
 	$response = exec($command, $output);
 	$out = "";
@@ -193,7 +194,7 @@ if (true === isset($_GET) && true === isset($_GET['action']) && "logs" == trim($
 }
 
 if (true === isset($_GET) && true === isset($_GET['action']) && "drives" == trim($_GET['action'])) {
-	$command = '/usr/bin/ssh -p 202 root@linuxcounter.net "df -h" 2>/dev/null';
+	$command = 'ssh -p '.$SSH_PORT.' '.$SSH_HOST.' "df -h" 2>/dev/null';
 	$output = array();
 	$response = exec($command, $output);
 	$out = "";
